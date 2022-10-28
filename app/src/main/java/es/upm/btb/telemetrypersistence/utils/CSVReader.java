@@ -1,4 +1,4 @@
-package es.upm.btb.telemetrypersistence;
+package es.upm.btb.telemetrypersistence.utils;
 
 import android.content.Context;
 
