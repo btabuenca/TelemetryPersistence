@@ -268,7 +268,6 @@ public class MainActivity extends AppCompatActivity {
         String keys = "co2,humidity,light,soilTemp1,soilTemp2,temperature";
         String useStrictDataTypes = "false";
 
-
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()

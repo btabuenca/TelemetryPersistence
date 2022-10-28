@@ -1,5 +1,4 @@
 package es.upm.btb.telemetrypersistence.device;
-import java.util.List;
 
 import es.upm.btb.telemetrypersistence.pojo.AuthorizationBearer;
 import es.upm.btb.telemetrypersistence.pojo.Credentials;
@@ -9,7 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -24,7 +22,6 @@ public interface ISpikeRESTAPIService {
     Call<Measurement> getLastTelemetry(@Header("Authorization") String authorization, @Path("deviceid") String deviceId, @Query("keys") String keys, @Query("useStrictDataTypes") String useStrictDataTypes);
     //https://thingsboard.cloud:443/api/plugins/telemetry/DEVICE/{{deviceId}}/values/timeseries?keys=co2&useStrictDataTypes=false
 
-    @Headers({"Cache-Control:no-cache","Accept:application/json","Accept-Encoding:gzip,deflate,br","Connection:keep-alive", "Content-Type: application/json; charset=UTF-8"})
     @GET("{deviceid}/values/timeseries")
     Call<Sensors> getTelemetries(@Header("Authorization") String authorization, @Path("deviceid") String deviceId, @Query("keys") String keys, @Query("startTs") String startTs, @Query("endTs") String endTs);
     // API_BASE_GET = "https://thingsboard.cloud:443/api/plugins/telemetry/DEVICE/";

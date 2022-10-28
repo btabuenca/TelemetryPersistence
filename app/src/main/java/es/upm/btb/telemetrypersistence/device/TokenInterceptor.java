@@ -17,12 +17,6 @@ public class TokenInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
 
-        //rewrite the request to add bearer token
-/*
-        Request newRequest = chain.request().newBuilder()
-                .header("Authorization","Bearer "+ TOKEN)
-                .build();
-*/
         Request newRequest = chain.request().newBuilder()
                 .header("Accept", "application/json")
                 .header("Content-Type", "application/json")
